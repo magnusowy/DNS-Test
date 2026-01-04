@@ -1,0 +1,6 @@
+pytest>=8.4.1
+allure-pytest
+pytest-playwright
+playwright
+dnspython>=2.6
+pyyaml>=6.0.2

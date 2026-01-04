@@ -1,0 +1,18 @@
+services:
+  proxy_cloudflare:
+    image: ubuntu/squid:5.2-22.04_edge
+    container_name: proxy_cloudflare
+    volumes:
+      - ./docker/infra/squid/squid_cloudflare.conf:/etc/squid/squid.conf:ro
+    ports:
+      - "3128:3128"   # host: 3128
+    restart: unless-stopped
+
+  proxy_google:
+    image: ubuntu/squid:5.2-22.04_edge
+    container_name: proxy_google
+    volumes:
+      - ./docker/infra/squid/squid_google.conf:/etc/squid/squid.conf:ro
+    ports:
+      - "3129:3128"   # host:3129 -> container:3128
+    restart: unless-stopped

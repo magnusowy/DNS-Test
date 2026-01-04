@@ -1,0 +1,16 @@
+servers:
+  - 8.8.8.8 # Google
+  - 1.1.1.1 # Cloudflare
+url : www.wp.pl
+
+proxies:
+  - name: cloudflare
+    url: "http://localhost:3128"
+  - name: google
+    url: "http://localhost:3129"
+
+urls:
+  - "https://www.google.com"
+  - "https://www.wp.pl"
+
+repeats_for_visit_request_test: 5
